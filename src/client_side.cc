@@ -2696,8 +2696,9 @@ clientProcessRequest(ConnStateData *conn, HttpParser *hp, ClientSocketContext *c
                 authority.appendf(":%d", request->port);
             debugs(33, 5, "URL domain " << authority << " overrides header Host: " << host);
             // URL authority overrides Host header
-            request->header.delById(HDR_HOST);
-            request->header.putStr(HDR_HOST, authority.c_str());
+            //request->header.delById(HDR_HOST);
+            //request->header.putStr(HDR_HOST, authority.c_str());
+            request->header.modifyById(HDR_HOST, authority.c_str());
         }
     }
 

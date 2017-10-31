@@ -803,6 +803,7 @@ HttpHeader::parse(const char *header_start, const char *header_end)
     }
 
     PROF_stop(HttpHeaderParse);
+
     return 1;           /* even if no fields where found, it is a valid header */
 }
 
@@ -961,6 +962,31 @@ HttpHeader::delById(http_hdr_type id)
     while ((e = getEntry(&pos))) {
         if (e->id == id)
             delAt(pos, count);
+    }
+
+    CBIT_CLR(mask, id);
+    assert(count);
+    return count;
+}
+
+int
+HttpHeader::modifyById(http_hdr_type id, const char *str)
+{
+    int count = 0;
+    HttpHeaderPos pos = HttpHeaderInitPos;
+    HttpHeaderEntry *e;
+    debugs(55, 8, this << " modify-by-id " << id);
+    assert_eid(id);
+    assert(id != HDR_OTHER);        /* does not make sense */
+
+    if (!CBIT_TEST(mask, id))
+        return 0;
+
+    while ((e = getEntry(&pos))) {
+        if (e->id == id) {
+            e->value = str;
+            count++;
+        }
     }
 
     CBIT_CLR(mask, id);

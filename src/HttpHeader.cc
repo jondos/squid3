@@ -969,6 +969,7 @@ HttpHeader::delById(http_hdr_type id)
     return count;
 }
 
+#if DISABLE_HEADER_REORDERING
 int
 HttpHeader::modifyById(http_hdr_type id, const char *str)
 {
@@ -993,7 +994,7 @@ HttpHeader::modifyById(http_hdr_type id, const char *str)
     assert(count);
     return count;
 }
-
+#endif
 /*
  * deletes an entry at pos and leaves a gap; leaving a gap makes it
  * possible to iterate(search) and delete fields at the same time

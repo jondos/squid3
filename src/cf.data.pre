@@ -9213,6 +9213,18 @@ DOC_START
 	see also refresh_pattern for a more selective approach.
 DOC_END
 
+NAME: disable_header_reordering
+IFDEF: USE_HTTP_VIOLATIONS
+COMMENT: on|off
+TYPE: onoff
+DEFAULT: off
+LOC: Config.onoff.disable_header_reordering
+DOC_START
+	When you enable this option, Squid will not alter the 
+	ordering of the headers sent by clients.
+DOC_END
+
+
 NAME: connect_retries
 TYPE: int
 LOC: Config.connect_retries

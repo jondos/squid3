@@ -226,7 +226,9 @@ public:
     HttpHeaderEntry *findEntry(http_hdr_type id) const;
     int delByName(const char *name);
     int delById(http_hdr_type id);
+#if DISABLE_HEADER_REORDERING
     int modifyById(http_hdr_type id, const char *str);
+#endif
     void delAt(HttpHeaderPos pos, int &headers_deleted);
     void refreshMask();
     void addEntry(HttpHeaderEntry * e);

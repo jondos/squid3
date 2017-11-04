@@ -326,9 +326,7 @@ public:
         int hostStrictVerify;
         int client_dst_passthru;
         int dns_mdns;
-#if DISABLE_HEADER_REORDERING
 	int disable_header_reordering;
-#endif
     } onoff;
 
     int pipeline_max_prefetch;

@@ -1,0 +1,16 @@
+Package: squid3
+Section: web
+Priority: optional
+Architecture: amd64
+Maintainer: JonDos GmbH <support@jondos.de>
+Homepage: http://www.squid-cache.org
+Version: 3.5-noreorder
+Depends: netbase, logrotate (>= 3.5.4-1)
+Description: Full featured Web Proxy cache (HTTP proxy)
+ Squid is a high-performance proxy caching server for web clients, supporting
+ FTP, gopher, ICY and HTTP data objects.
+ .
+ Squid version 3 is a major rewrite of Squid in C++ and introduces a number of
+ new features including ICAP and ESI support.
+ .
+ Patched version, will not reorder headers if asked to do so.

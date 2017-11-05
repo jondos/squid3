@@ -34,3 +34,14 @@ disable_header_reordering on
 ```
 
 to the configuration file.
+
+## CentOS 7 installation
+
+To install the RPM file on CentOS:
+
+```
+# yum --enablerepo=extras install epel-release
+# yum install perl-{Digest-MD5,DBI,Crypt-OpenSSL-X509,Authen-Smb}
+# rpm -ivh perl-Authen-Smb-0.91-1.2.el6.rf.x86_64.rpm
+# rpm -ivh squid3noreorder-3.5noreorder-0.x86_64.rpm 
+

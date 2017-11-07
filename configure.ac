@@ -2465,16 +2465,17 @@ AC_MSG_NOTICE([Support for X-Forwarded-For enabled: ${enable_follow_x_forwarded_
 SQUID_DEFINE_BOOL(FOLLOW_X_FORWARDED_FOR,$enable_follow_x_forwarded_for,
   [Enable following X-Forwarded-For headers])
 
-AC_ARG_ENABLE(header_reordering,
-  AS_HELP_STRING([--disable-header-reordering],
-                 [Prevents Squid automatic reordering of the client
-		  headers during the client side phase.]), [
+AC_ARG_ENABLE(headerreordering,
+  AS_HELP_STRING([--enable-headerreordering],
+    [Enable standard Squid header reordering routine.]), [ 
   SQUID_YESNO([$enableval],
-    [unrecognized argument to --disable-header-reordering: $enableval])
+     [unrecognized argument to --enable-headerreordering: $enableval])
 ])
-AC_MSG_NOTICE([Disable header reordering: ${disable_header_reordering:=yes}])
-SQUID_DEFINE_BOOL(DISABLE_HEADER_REORDERING,$disable_header_reordering,
-  [Disable header reordering])
+AC_MSG_NOTICE([Header reordering enabled: ${enable_headerreordering:=no}])
+SQUID_DEFINE_BOOL(DISABLE_HEADER_REORDERING,$enable_headerreordering,
+  [Enable standard Squid header reordering routine])
+AM_CONDITIONAL(MAKE_DISABLE_HEADER_REORDERING, [test "x$enable_headerreordering" = "xyes"])
+
 
 AC_ARG_ENABLE(ident-lookups,
   AS_HELP_STRING([--disable-ident-lookups],

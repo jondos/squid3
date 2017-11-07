@@ -25,7 +25,7 @@ It was happening in `client_side.cc`, lines 2699-2700: deleting and re-adding th
 
 The solution was adding a new function called `HttpHeader::modifyById()`, which accepted the same parameters as `HttpHeader::delById()` and `HttpHeader::putStr()` and instead of deleting and adding, it just modifies the content of the already-present header.
 
-To enable the solution implemented, Squid must be built with the `--disable_header_reordering` parameter passed to `configure`.
+To enable the solution implemented, Squid must be built with the `--enable-headerreordering` parameter passed to `configure`.
 
 A new boolean configuration parameter has been added too, called `disable_header_reordering` - it is off by default, to enable it just put 
 

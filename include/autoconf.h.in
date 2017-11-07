@@ -27,6 +27,9 @@
 /* The install prefix */
 #undef DEFAULT_PREFIX
 
+/* Enable standard Squid header reordering routine */
+#undef DISABLE_HEADER_REORDERING
+
 /* Enable following X-Forwarded-For headers */
 #undef FOLLOW_X_FORWARDED_FOR
 

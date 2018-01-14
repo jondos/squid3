@@ -37,7 +37,7 @@ to the configuration file.
 
 ## Debian installation
 
-### Debian 16.04 an above:
+### Debian 16.04 and above:
 
 ```
 # sudo apt install squid3.5-noreorder.deb 

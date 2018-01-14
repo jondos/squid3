@@ -35,6 +35,16 @@ disable_header_reordering on
 
 to the configuration file.
 
+## Debian installation
+
+### Debian 16.04 an above:
+
+sudo apt install squid3.5-noreorder.deb 
+
+### Debian 15.10 and below
+
+sudo dpkg -i squid3.5-noreorder.deb 
+
 ## CentOS 7 installation
 
 To install the RPM file on CentOS:

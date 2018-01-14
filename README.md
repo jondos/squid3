@@ -39,11 +39,15 @@ to the configuration file.
 
 ### Debian 16.04 an above:
 
-sudo apt install squid3.5-noreorder.deb 
+```
+# sudo apt install squid3.5-noreorder.deb 
+```
 
 ### Debian 15.10 and below
 
-sudo dpkg -i squid3.5-noreorder.deb 
+```
+# sudo dpkg -i squid3.5-noreorder.deb 
+```
 
 ## CentOS 7 installation
 
@@ -54,4 +58,4 @@ To install the RPM file on CentOS:
 # yum install perl-{Digest-MD5,DBI,Crypt-OpenSSL-X509,Authen-Smb}
 # rpm -ivh perl-Authen-Smb-0.91-1.2.el6.rf.x86_64.rpm
 # rpm -ivh squid3noreorder-3.5noreorder-0.x86_64.rpm 
-
+```
